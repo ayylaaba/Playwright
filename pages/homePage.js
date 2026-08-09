@@ -1,3 +1,4 @@
+
 class HomePage {
     constructor(page) {
         this.page = page;
@@ -9,6 +10,7 @@ class HomePage {
         this.loggedInAsText = page.locator('a', { hasText: 'Logged in as' });
         this.logoutLink = page.locator('a[href="/logout"]');
         this.deleteAccountLink = page.locator('a[href="/delete_account"]');
+        // this.deletedMessa
     }
 
     async goto() {
