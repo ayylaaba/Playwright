@@ -25,9 +25,24 @@ class OrderPage
         this.registerButton = page.getByRole('link', { name: 'Register / Login' });
         
     }
-
     async proceedToCheckout() {
         await this.proceedCheckout.click();
+    }
+    async placeOrderClick(){
+        await this.placeOrder.click();
+    }
+
+    async fillPaymentForm (nameCard, cardNumber, cvc, expirationMonth, expirationYear){
+
+        await this.nameCard.fill(nameCard);
+        await this.cardNumber.fill(cardNumber);
+        await this.cvc.fill(cvc);
+        await this.expirationMonth.fill(expirationMonth);
+        await this.expirationYear.fill(expirationYear);
+    }
+
+    async confirmOrderButton(){
+        await this.confirmOrder.click(); 
     }
 
 }

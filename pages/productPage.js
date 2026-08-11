@@ -6,7 +6,8 @@ class ProductPage {
       this.products = page.locator('.product-image-wrapper');
       this.continueShoppingButton = page.getByRole('button', { name: 'Continue Shopping' });
       this.viewCart = page.locator('#cartModal').getByRole('link', { name: 'View Cart' });
-      this.CartRows = page.locator('table tr'); 
+      this.CartRows = page.locator('table tbody tr'); 
+      this.emptyMessage = page.locator('.text-center b', { hasText: 'Cart is empty!' })
     }
   
     async addProductToCart(index) {
@@ -15,6 +16,10 @@ class ProductPage {
       await product.locator('.add-to-cart').first().click();
     }
   
+    async removeProductFromCart(index) {
+      await this.page.locator(`a[data-product-id="${index}"]`).click();
+    }
+
     async clickContinueShopping() {
       await this.continueShoppingButton.click();
     }
@@ -24,8 +29,7 @@ class ProductPage {
     }
 
     async getRows(){
-        const rows = await this.rows;
-        return rows;
+        return this.CartRows.count();
     }
 
   }

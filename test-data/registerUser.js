@@ -17,6 +17,8 @@ import generateTestUser from "./testUser.js";
   const user = generateTestUser();
 
   await homePage.goto();
+  await expect(page).toHaveTitle('Automation Exercise');
+
   await homePage.goToLogin();
   await loginPage.fillSignupForm(user.name, user.email);
 

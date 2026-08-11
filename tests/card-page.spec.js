@@ -45,4 +45,34 @@ test.describe('Test Case 12: Add Products in Cart', () => {
       expect(totalNum).toBe(priceNum * qtyNum);
     }
   });
+
+  test('Test Case 17: Remove Products From Cart', async({page}) => {
+    
+    const homePage = new HomePage(page);
+    const productPage = new ProductPage(page);
+
+    await homePage.goto();
+    await expect(page).toHaveTitle('Automation Exercise');
+
+    await homePage.goToProducts();
+
+    await productPage.addProductToCart(0);
+    await productPage.clickContinueShopping();
+    await productPage.addProductToCart(1);
+
+
+    await homePage.goToCart();
+    await expect(page).toHaveTitle('Automation Exercise - Checkout');
+
+    const rows = await productPage.getRows();
+    await expect(rows).toBe(2);
+
+    await productPage.removeProductFromCart(1);
+    
+    await expect(productPage.CartRows).toHaveCount(rows - 1);
+    
+    await productPage.removeProductFromCart(2);
+    await expect(productPage.emptyMessage).toContainText('Cart is empty!');
+  })
+
 });
