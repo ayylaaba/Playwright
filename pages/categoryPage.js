@@ -10,8 +10,6 @@ class CategoryPage {
     this.womenSubLink = (name) => page.locator('#Women').getByRole('link', { name, exact: true });
     this.menSubLink = (name) => page.locator('#Men').getByRole('link', { name, exact: true });
 
-    // The brand list itself, and a function to grab one specific brand link by name
-    this.brandsList = page.locator('.brands-name');
     this.brandLink = (name) => page.locator(`a[href="/brand_products/${name}"]`);
 
     this.categoryProductsTitle = page.locator('h2.title.text-center');

@@ -1,51 +1,47 @@
-
 class HomePage {
-    constructor(page) {
-        this.page = page;
-        this.loginLink =    page.locator('a[href="/login"]');
-        this.productsLink = page.locator('a[href="/products"]');
-        this.contactUsLink = page.locator('a[href="/contact_us"]');
-        this.testCasesLink = page.getByRole('link', { name: 'Test Cases', exact: true });
-        this.cartLink      = page.getByRole('link', { name: 'Cart' });
-        this.loggedInAsText = page.locator('a', { hasText: 'Logged in as' });
-        this.logoutLink = page.locator('a[href="/logout"]');
-        this.deleteAccountLink = page.locator('a[href="/delete_account"]');
-        // this.deletedMessa
-    }
+  constructor(page) {
+    this.page = page;
+    this.loginLink = page.locator('a[href="/login"]');
+    this.productsLink = page.locator('a[href="/products"]');
+    this.contactUsLink = page.locator('a[href="/contact_us"]');
+    this.testCasesLink = page.getByRole('link', { name: 'Test Cases', exact: true });
+    this.cartLink = page.locator('a[href="/view_cart"]').first();    this.loggedInAsText = page.locator('a', { hasText: 'Logged in as' });
+    this.logoutLink = page.locator('a[href="/logout"]');
+    this.deleteAccountLink = page.locator('a[href="/delete_account"]');
+    this.arrowButton = page.locator('#scrollUp');
+  }
 
-    async goto() {
-        await this.page.goto('https://automationexercise.com/');
-    }
+  async goto() {
+    await this.page.goto('https://automationexercise.com/');
+  }
 
-    async goToCart() {
+  async goToCart() {
+    await this.cartLink.click();
+  }
 
-        await this.cartLink.click();
-    }
+  async goToLogin() {
+    await this.loginLink.click();
+  }
 
-    async goToLogin() {
+  async goToProducts() {
+    await this.productsLink.click();
+  }
 
-        await this.loginLink.click();
-    }
+  async goToContactUs() {
+    await this.contactUsLink.click();
+  }
 
-    async goToProducts() {
-        await this.productsLink.click();
-    }
+  async goToTestCases() {
+    await this.testCasesLink.click();
+  }
 
-    async goToContactUs() {
-        await this.contactUsLink.click();
-    }
-    
-    async goToTestCases() {
-        await this.testCasesLink.click();
-    }
-    
-    async logout() {
-        await this.logoutLink.click();
-    }
-    
-    async deleteAccount() {
-        await this.deleteAccountLink.click();
-    }
+  async logout() {
+    await this.logoutLink.click();
+  }
+
+  async deleteAccount() {
+    await this.deleteAccountLink.click();
+  }
 }
 
 export default HomePage;
