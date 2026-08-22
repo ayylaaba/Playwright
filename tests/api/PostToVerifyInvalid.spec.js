@@ -15,8 +15,6 @@ test.describe('API 10: POST To Verify Login with invalid details', () => {
         expect(response.status()).toBe(200);
 
         const responseBody = await response.json();
-
-        console.log(responseBody);
         
         expect(responseBody.responseCode).toBe(404);
         

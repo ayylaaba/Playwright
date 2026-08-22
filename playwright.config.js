@@ -13,10 +13,10 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
   projects: [
-    // {
-    //   name: 'chromium', 
-    //   use: { ...devices['Desktop Chrome'] }
-    // },
+    {
+      name: 'chromium', 
+      use: { ...devices['Desktop Chrome'] }
+    },
     // {
     //   name: 'chromium-private',
     //   use: { 
@@ -26,17 +26,17 @@ export default defineConfig({
     //     }
     //   }
     // },
-    {
-      name: 'brave-private',
-      use: { 
-        ...devices['Desktop Chrome'],
-        launchOptions: {
-          // Path to Brave on macOS
-          executablePath: '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',
-          args: ['--incognito']
-        }
-      }
-    },
+    // {
+    //   name: 'brave-private',
+    //   use: { 
+    //     ...devices['Desktop Chrome'],
+    //     launchOptions: {
+    //       // Path to Brave on macOS
+    //       executablePath: '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',
+    //       args: ['--incognito']
+    //     }
+    //   }
+    // },
     //{
       // name: 'firefox-private',
       // use: { 

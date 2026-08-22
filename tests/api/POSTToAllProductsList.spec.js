@@ -11,8 +11,6 @@ test.describe('POST To All Products List', () => {
         expect(response.status()).toBe(200);
 
         const responseBody = await response.json();
-
-        console.log(responseBody);
         
         expect(responseBody.responseCode).toBe(405);
         

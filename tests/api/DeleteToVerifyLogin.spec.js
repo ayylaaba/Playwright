@@ -10,7 +10,6 @@ test.describe('API 9: DELETE To Verify Login', () => {
 
         // Optional: Check response body
         const responseBody = await response.json();
-        console.log(responseBody);
 
         // Check responseCode
         expect(responseBody.responseCode).toBe(405);

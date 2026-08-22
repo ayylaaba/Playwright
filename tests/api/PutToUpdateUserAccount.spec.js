@@ -27,7 +27,6 @@ test.describe('API 11: POST To Create/Register User Account', () => {
 
         expect(response.status()).toBe(200);
         const responseBody = await response.json();
-        console.log(responseBody);
         expect(responseBody.responseCode).toBe(200);
         expect(responseBody.message).toBe('User updated!');
     })

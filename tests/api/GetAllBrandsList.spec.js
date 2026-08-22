@@ -11,7 +11,6 @@ test.describe('API 3: Get All Brands List', () => {
 
         // Optional: Check response body
         const responseBody = await response.json();
-        console.log(responseBody);
 
         // Check response structure
         expect(responseBody.responseCode).toBe(200);

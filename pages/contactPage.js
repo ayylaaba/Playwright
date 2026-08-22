@@ -18,7 +18,6 @@ class ContactPage {
     await this.emailInput.fill(email);
     await this.subjectInput.fill(subject);
     await this.messageTextarea.fill(message);
-    console.log('filePath : ', filePath);
     await this.uploadFileInput.setInputFiles(filePath);
   }
 

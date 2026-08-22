@@ -10,7 +10,6 @@ test.describe('API 1: Get All Products List', () => {
 
         // Optional: Check response body
         const responseBody = await response.json();
-        console.log(responseBody);
 
         // Check response structure
         expect(responseBody).toHaveProperty('products');

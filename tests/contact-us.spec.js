@@ -34,7 +34,6 @@ test.describe('Contact Us Form', () => {
     await contactPage.submitForm();
     await contactPage.submitForm();
 
-    console.log('URL after submit:', page.url());
     const bodyText = await page.locator('body').innerText();
     console.log('Contains "Success"?', bodyText.includes('Success'));
     console.log('Contains "submitted"?', bodyText.includes('submitted'));
