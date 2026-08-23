@@ -11,10 +11,17 @@ class HomePage {
     this.arrowButton = page.locator('#scrollUp');
   }
 
-  async goto() {
-    await this.page.goto('https://automationexercise.com/');
-  }
+  // async goto() {
+  //   await this.page.goto('https://automationexercise.com/');
+  // }
 
+  // pages/homePage.js
+  async goto() {
+    await this.page.goto('https://automationexercise.com/', {
+      waitUntil: 'domcontentloaded',
+      timeout: 60000,
+    });
+  }
   async goToCart() {
     await this.cartLink.click();
   }

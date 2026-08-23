@@ -42,4 +42,6 @@ test.describe('Category & Brand Products', () => {
     await expect(page).toHaveURL('https://automationexercise.com/brand_products/Madame');
     await expect(categoryPage.brandProductsTitle).toContainText('Madame');
   });
+
+
 });

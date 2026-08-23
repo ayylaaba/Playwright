@@ -7,8 +7,7 @@ class SearchProductPage {
     this.productPage = new ProductPage(page);
     this.searchInput = page.locator('input[id="search_product"]');
     this.searchButton = page.locator('button[id="submit_search"]');
-    this.verifySearchProductHeading = page.locator('h2', { hasText: 'Searched Products' });
-  }
+    this.verifySearchProductHeading = page.locator('h2', { hasText: 'Searched Products' });  }
 
   async setSearchInput(productName) {
     await this.searchInput.fill(productName);

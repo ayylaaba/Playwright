@@ -28,6 +28,7 @@ class ContactPage {
     });
     await this.submitButton.click();
   }
+
 }
 
 export default ContactPage;

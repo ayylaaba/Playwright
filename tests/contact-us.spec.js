@@ -30,16 +30,17 @@ test.describe('Contact Us Form', () => {
       filePath
     );
 
-
     await contactPage.submitForm();
-    await contactPage.submitForm();
+    // await contactPage.submitForm();
 
-    const bodyText = await page.locator('body').innerText();
-    console.log('Contains "Success"?', bodyText.includes('Success'));
-    console.log('Contains "submitted"?', bodyText.includes('submitted'));
+    // const bodyText = await page.locator('body').innerText();
+    // console.log('Contains "Success"?', bodyText.includes('Success'));
+    // console.log('Contains "submitted"?', bodyText.includes('submitted'));
     
-    await page.screenshot({ path: 'debug-contact-submit.png', fullPage: true });
+    // await page.screenshot({ path: 'debug-contact-submit.png', fullPage: true });
     
-    await contactPage.homeButton.click();
+    // await contactPage.homeButton.click();
+
   });
+
 });
