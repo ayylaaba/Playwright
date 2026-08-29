@@ -7,7 +7,7 @@ export const test = base.extend({
       /doubleclick\.net|googlesyndication\.com|google\.com\/pagead|googleadservices\.com|adservice\.google|googletagservices\.com/,
       (route) => route.abort()
     );
-    await use(page);
+    await use(page); 
   },
 });
 

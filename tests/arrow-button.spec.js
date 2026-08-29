@@ -5,7 +5,7 @@ import HomePage from '../pages/homePage.js';
 test.describe('Scroll Behavior', () => {
   test(`Test Case 25: Verify Scroll Up using 'Arrow' button`, async ({ page }) => {
     const homePage = new HomePage(page);
-
+     
     await homePage.goto();
     await expect(page).toHaveTitle('Automation Exercise');
 
